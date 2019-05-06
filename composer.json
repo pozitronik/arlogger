@@ -1,0 +1,32 @@
+{
+	"name": "pozitronik/yii2-arlogger",
+	"description": "ActiveRecord logging & history extension for YII2",
+	"type": "yii2-extension",
+	"keywords": [
+		"yii2",
+		"activerecord",
+		"logger"
+	],
+	"license": "GPL-3.0",
+	"authors": [
+		{
+			"name": "Pavel Dubrovsky",
+			"email": "antikillerxxl@gmail.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/pozitronik/arlogger"
+		}
+	],
+	"require": {
+		"yiisoft/yii2": "~2.0.0",
+		"php": ">=7.2.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"pozitronik\\arlogger\\": ""
+		}
+	}
+}
