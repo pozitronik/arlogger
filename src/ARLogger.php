@@ -3,8 +3,7 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger;
 
-
-use yii\gii\Module;
+use yii\base\Module;
 
 /**
  * Class ARLogger
