@@ -1,9 +1,12 @@
 <?php
 
 use yii\helpers\Html;
+use yii\web\View;
 
-/* @var $this \yii\web\View */
-/* @var $content string */
+/**
+ * @var View $this
+ * @var string $content
+ */
 
 ?>
 <?php $this->beginPage() ?>
