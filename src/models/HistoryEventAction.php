@@ -24,9 +24,9 @@ class HistoryEventAction extends Model {
 	public const ATTRIBUTE_DELETED = 2;
 
 	public const ATTRIBUTE_TYPE_NAMES = [
-		self::ATTRIBUTE_CREATED => 'Добавлено',
-		self::ATTRIBUTE_CHANGED => 'Изменено',
-		self::ATTRIBUTE_DELETED => 'Удалено'
+		self::ATTRIBUTE_CREATED => 'Added',
+		self::ATTRIBUTE_CHANGED => 'Changed',
+		self::ATTRIBUTE_DELETED => 'Deleted'
 	];
 
 	public $type;
@@ -39,11 +39,11 @@ class HistoryEventAction extends Model {
 	 */
 	public function attributeLabels():array {
 		return [
-			'type' => 'Изменение',
-			'typeName' => 'Событие',
-			'attributeName' => 'Атрибут',
-			'attributeOldValue' => 'Было',
-			'attributeNewValue' => 'Стало'
+			'type' => 'Change',
+			'typeName' => 'Action',
+			'attributeName' => 'Attribute',
+			'attributeOldValue' => 'Old value',
+			'attributeNewValue' => 'New value'
 		];
 	}
 
