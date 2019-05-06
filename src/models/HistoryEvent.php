@@ -57,7 +57,6 @@ class HistoryEvent extends Model implements HistoryEventInterface {
 		} else $content = null;
 
 		return new TimelineEntry([
-			'icon' => $this->eventIcon,
 			'time' => $this->eventTime,
 			'caption' => $this->eventCaption??$this->eventTypeName,
 			'user' => $this->subject,
