@@ -12,7 +12,7 @@ Add
 ```
 {
 	"type": "vcs",
-	"url": "https://github.com/pozitronik/arlogger"
+	"url": "https://github.com/pozitronik/yii2-arlogger"
 } 
 ```
 
