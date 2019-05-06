@@ -16,8 +16,6 @@ use yii\helpers\Html;
 use yii\i18n\Formatter;
 use yii\web\View;
 
-$this->title = 'История';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <?= GridView::widget([
