@@ -9,8 +9,6 @@ declare(strict_types = 1);
 use pozitronik\arlogger\models\ActiveRecordLoggerInterface;
 use pozitronik\arlogger\widgets\timeline_entry\TimelineEntryWidget;
 use yii\web\View;
-$this->title = 'История изменений';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="timeline">
