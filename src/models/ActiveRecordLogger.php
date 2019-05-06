@@ -31,7 +31,6 @@ use yii\db\ActiveRecord;
  * @property array $new_attributes
  * @property-read int $eventType
  *
- * @property-read ActiveQuery|Users $relUser
  * @property-read HistoryEventInterface $event
  * @property-read HistoryEventAction[] $eventActions
  *
@@ -59,8 +58,6 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 			'old_attributes' => 'Было',
 			'new_attributes' => 'Стало',
 			'eventType' => 'Тип события',
-			'relUser' => 'Пользователь',
-			'username' => 'Пользователь',
 			'actions' => 'События'
 		];
 	}
@@ -188,13 +185,6 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 
 	}
 
-	/**
-	 * @return Users|ActiveQuery
-	 * @throws Throwable
-	 */
-	public function getRelUser() {
-		return $this->hasOne(Users::class, ['id' => 'user']);
-	}
 
 	/**
 	 * Переводит запись из лога в событие истории
@@ -208,7 +198,7 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 
 		$result->eventTime = $this->timestamp;
 		$result->objectName = $this->model;
-		$result->subject = $this->relUser;
+		$result->subject = $this->user;
 		$result->eventIcon = Icons::event_icon($result->eventType);
 		$result->actions = $this->eventActions;
 

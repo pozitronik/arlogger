@@ -3,13 +3,12 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger\models;
 
-use app\helpers\ArrayHelper;
-use app\modules\users\models\Users;
 use Exception;
 use Throwable;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Model;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class HistoryEvent
@@ -19,7 +18,7 @@ use yii\base\Model;
  * @property string|null $eventIcon Иконка?
  * @property string $eventTime Во сколько сделал
  * @property string $objectName Где сделал (имя класса)
- * @property null|Users $subject Кто сделал
+ * @property null|int $subject Кто сделал
  * @property HistoryEventAction[] $actions Набор изменений внутри одного события.
  * @property null|string $eventCaption Переопределить типовой заголовок события
  *

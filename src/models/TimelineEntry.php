@@ -3,7 +3,6 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger\models;
 
-use app\modules\users\models\Users;
 use yii\base\Model;
 
 /**
@@ -13,7 +12,7 @@ use yii\base\Model;
  * @property string $time
  * @property string $caption
  * @property string $content
- * @property Users $user
+ * @property int $user
  */
 class TimelineEntry extends Model {
 	public $icon;

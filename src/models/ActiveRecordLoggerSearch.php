@@ -20,7 +20,7 @@ class ActiveRecordLoggerSearch extends ActiveRecordLogger {
 	 */
 	public function rules():array {
 		return [
-			[['actions', 'username', 'at', 'model'], 'safe']
+			[['actions', 'user', 'at', 'model'], 'safe']
 		];
 	}
 
@@ -42,7 +42,6 @@ class ActiveRecordLoggerSearch extends ActiveRecordLogger {
 			'attributes' => [
 				'id',
 				'at',
-				'relUser',
 				'modelKey',
 				'model'
 			]
@@ -53,8 +52,6 @@ class ActiveRecordLoggerSearch extends ActiveRecordLogger {
 
 		if (!$this->validate()) return $dataProvider;
 
-		$query->joinWith(['relUser']);
-		$query->andFilterWhere(['like', 'sys_users.username', $this->username]);
 		$query->andFilterWhere(['in', 'model', $this->model]);
 
 		return $dataProvider;

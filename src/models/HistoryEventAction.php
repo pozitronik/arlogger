@@ -3,9 +3,9 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger\models;
 
-use app\helpers\ArrayHelper;
 use Throwable;
 use yii\base\Model;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class HistoryEventAction
