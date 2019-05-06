@@ -24,9 +24,9 @@ interface HistoryEventInterface {
 	public const EVENT_DELETED = 2;
 
 	public const EVENT_TYPE_NAMES = [
-		self::EVENT_CREATED => 'Запись добавлена',
-		self::EVENT_CHANGED => 'Запись изменена',
-		self::EVENT_DELETED => 'Запись удалена'
+		self::EVENT_CREATED => 'Record added',
+		self::EVENT_CHANGED => 'Record changed',
+		self::EVENT_DELETED => 'Record deleted'
 	];
 
 }
