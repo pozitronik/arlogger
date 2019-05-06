@@ -3,13 +3,7 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger\models;
 
-use app\helpers\ArrayHelper;
-use app\helpers\Icons;
-use app\models\core\ActiveRecordExtended;
-use app\models\core\helpers\ReflectionHelper;
-use app\models\core\ActiveQueryExtended;
-use app\models\user\CurrentUser;
-use app\modules\users\models\Users;
+use pozitronik\arlogger\helpers\ReflectionHelper;
 use ReflectionClass;
 use ReflectionException;
 use Throwable;
@@ -18,6 +12,7 @@ use yii\base\InvalidConfigException;
 use yii\base\UnknownClassException;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class ActiveRecordLogger
@@ -116,7 +111,7 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 		$pKey = is_numeric($pKey)?$pKey:null;//$pKey может быть массивом
 
 		$log = new self([
-			'user' => CurrentUser::Id(),
+			'user' => null,//todo Yii::$app->user??Yii::$app->user->id,
 			'model' => $modelName,
 			'model_key' => $pKey,
 			'old_attributes' => $oldAttributes,
@@ -185,7 +180,6 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 
 	}
 
-
 	/**
 	 * Переводит запись из лога в событие истории
 	 * @return HistoryEventInterface
@@ -199,7 +193,7 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 		$result->eventTime = $this->timestamp;
 		$result->objectName = $this->model;
 		$result->subject = $this->user;
-		$result->eventIcon = Icons::event_icon($result->eventType);
+//		$result->eventIcon = Icons::event_icon($result->eventType);
 		$result->actions = $this->eventActions;
 
 		$labelsConfig = $this->getModelRules("eventConfig.eventLabels");
