@@ -111,7 +111,7 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 		$pKey = is_numeric($pKey)?$pKey:null;//$pKey может быть массивом
 
 		$log = new self([
-			'user' => null,//todo Yii::$app->user??Yii::$app->user->id,
+			'user' => Yii::$app->user->id,//Предполагается, что фреймворк сконфигурирован с использованием user identity class
 			'model' => $modelName,
 			'model_key' => $pKey,
 			'old_attributes' => $oldAttributes,
