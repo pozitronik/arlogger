@@ -18,7 +18,6 @@ use yii\helpers\ArrayHelper;
  * Class ActiveRecordLogger
  * @property integer $id
  * @property-read string $at
- * @property-read string $timestamp//alias of $at
  * @property int $user
  * @property string $model
  * @property int $model_key
@@ -46,14 +45,13 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 	public function attributeLabels():array {
 		return [
 			'id' => 'ID',
-			'at' => 'Время события',
-			'timestamp' => 'Время события',
-			'user' => 'Пользователь',
-			'model' => 'Источник',
-			'old_attributes' => 'Было',
-			'new_attributes' => 'Стало',
-			'eventType' => 'Тип события',
-			'actions' => 'События'
+			'at' => 'Event time',
+			'user' => 'User',
+			'model' => 'Source',
+			'old_attributes' => 'Old value',
+			'new_attributes' => 'New value',
+			'eventType' => 'Event type',
+			'actions' => 'Event actions'
 		];
 	}
 
