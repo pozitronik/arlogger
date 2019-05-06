@@ -5,7 +5,7 @@ namespace pozitronik\arlogger\models;
 
 use Throwable;
 use yii\base\Model;
-use yii\helpers\ArrayHelper;
+use pozitronik\helpers\ArrayHelper;
 
 /**
  * Class HistoryEventAction

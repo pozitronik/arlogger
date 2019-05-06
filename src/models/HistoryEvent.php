@@ -8,7 +8,7 @@ use Throwable;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Model;
-use yii\helpers\ArrayHelper;
+use pozitronik\helpers\ArrayHelper;
 
 /**
  * Class HistoryEvent

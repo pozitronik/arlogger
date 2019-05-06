@@ -5,6 +5,7 @@ namespace pozitronik\arlogger\models;
 
 use pozitronik\arlogger\helpers\ReflectionHelper;
 use pozitronik\arlogger\traits\ARExtended;
+use pozitronik\helpers\ArrayHelper;
 use ReflectionClass;
 use ReflectionException;
 use Throwable;
@@ -13,7 +14,6 @@ use yii\base\InvalidConfigException;
 use yii\base\UnknownClassException;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
-use yii\helpers\ArrayHelper;
 
 /**
  * Class ActiveRecordLogger
