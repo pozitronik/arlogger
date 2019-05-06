@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace pozitronik\arlogger\models;
 
 use pozitronik\arlogger\helpers\ReflectionHelper;
+use pozitronik\arlogger\traits\ARExtended;
 use ReflectionClass;
 use ReflectionException;
 use Throwable;
@@ -31,6 +32,7 @@ use yii\helpers\ArrayHelper;
  * @property object|ReflectionClass|null $loadedModel Прогруженная (если есть возможность) модель указанного в логе класса
  */
 class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInterface {
+	use ARExtended;
 
 	/**
 	 * {@inheritDoc}
