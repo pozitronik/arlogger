@@ -13,7 +13,7 @@ use yii\web\View;
 
 <div class="timeline-entry">
 	<div class="timeline-stat">
-		<div class="timeline-icon"><?= $entry->icon ?></div>
+		<div class="timeline-icon"><?= $entry->user ?></div>
 		<div class="timeline-time"><?= $entry->time ?></div>
 	</div>
 	<div class="timeline-label">
