@@ -193,8 +193,9 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 		$result->eventTime = $this->timestamp;
 		$result->objectName = $this->model;
 		$result->subject = $this->user;
-//		$result->eventIcon = Icons::event_icon($result->eventType);
 		$result->actions = $this->eventActions;
+
+		$result->eventCaption = ArrayHelper::getValue(HistoryEventInterface::EVENT_TYPE_NAMES, $this->eventType);
 
 		$labelsConfig = $this->getModelRules("eventConfig.eventLabels");
 
@@ -202,7 +203,7 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 			$result->eventCaption = $labelsConfig($result->eventType, $result->eventTypeName);
 		} elseif (is_array($labelsConfig)) {
 			$result->eventCaption = ArrayHelper::getValue($labelsConfig, $result->eventType, $result->eventTypeName);
-		} else $result->eventCaption = $labelsConfig;
+		} elseif (null !== $labelsConfig) $result->eventCaption = $labelsConfig;
 
 		$result->actionsFormatter = $this->getModelRules("eventConfig.actionsFormatter");
 

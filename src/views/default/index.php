@@ -31,7 +31,7 @@ use yii\web\View;
 		[
 			'attribute' => 'eventType',
 			'value' => static function(ActiveRecordLogger $model) {
-				$model->eventType;
+				return $model->event->eventCaption;
 			},
 			'format' => 'raw'
 		],
