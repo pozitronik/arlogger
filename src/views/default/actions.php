@@ -28,26 +28,26 @@ use yii\i18n\Formatter;
 	'columns' => [
 		[
 			'class' => DataColumn::class,
-			'attribute' => 'typeName',
+			'attribute' => 'typeName'
 		],
 		[
 			'class' => DataColumn::class,
 			'enableSorting' => false,
-			'attribute' => 'attributeName',
+			'attribute' => 'attributeName'
 		],
 		[
 			'class' => DataColumn::class,
 			'attribute' => 'attributeOldValue',
 			'value' => static function(HistoryEventAction $model) {
 				return is_array($model->attributeOldValue)?json_encode($model->attributeOldValue, JSON_PRETTY_PRINT):$model->attributeOldValue;
-			},
+			}
 		],
 		[
 			'class' => DataColumn::class,
 			'attribute' => 'attributeNewValue',
 			'value' => static function(HistoryEventAction $model) {
 				return is_array($model->attributeNewValue)?json_encode($model->attributeNewValue, JSON_PRETTY_PRINT):$model->attributeNewValue;
-			},
+			}
 		]
 	]
 ]) ?>

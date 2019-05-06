@@ -49,7 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				return null === $model->model_key?$model->model:Html::a($model->model, ['show', 'for' => $model->model, 'id' => $model->model_key]);
 			},
 			'format' => 'raw',
-			'filter' => $searchModel->model,
+			'filter' => $searchModel->model
 
 		],
 		[
