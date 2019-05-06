@@ -3,6 +3,7 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger\models;
 
+use pozitronik\arlogger\traits\ARExtended;
 use Throwable;
 use yii\db\ActiveRecord;
 
@@ -11,6 +12,7 @@ use yii\db\ActiveRecord;
  * @package pozitronik\arlogger\models
  */
 class ActiveRecordHistory extends ActiveRecord {
+	use ARExtended;
 	public $loggingEnabled = true;
 
 	/**
