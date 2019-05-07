@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger\models;
 
-use pozitronik\arlogger\helpers\ReflectionHelper;
+use pozitronik\helpers\ReflectionHelper;
 use pozitronik\arlogger\traits\ARExtended;
 use pozitronik\helpers\ArrayHelper;
 use ReflectionClass;
