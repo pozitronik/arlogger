@@ -29,6 +29,7 @@ use yii\db\ActiveRecord;
  * @property-read HistoryEventInterface $event
  * @property-read HistoryEventAction[] $eventActions
  *
+ * @property string $indexView Index view
  * @property string $timelineView Timeline view
  *
  * @property object|ReflectionClass|null $loadedModel Прогруженная (если есть возможность) модель указанного в логе класса
@@ -36,6 +37,7 @@ use yii\db\ActiveRecord;
 class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInterface {
 	use ARExtended;
 
+	private $_indexView = 'index';
 	private $_timelineView = 'timeline';
 
 	/**
@@ -339,6 +341,20 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 	 */
 	public function setTimelineView(string $timelineView):void {
 		$this->_timelineView = $timelineView;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getIndexView():string {
+		return $this->_indexView;
+	}
+
+	/**
+	 * @param string $indexView
+	 */
+	public function setIndexView(string $indexView):void {
+		$this->_indexView = $indexView;
 	}
 
 }

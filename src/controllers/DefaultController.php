@@ -25,7 +25,7 @@ class DefaultController extends Controller {
 	public function actionIndex():string {
 		$params = Yii::$app->request->queryParams;
 		$searchModel = new ActiveRecordLoggerSearch();
-		return $this->render('index', [
+		return $this->render($searchModel->indexView, [
 			'searchModel' => $searchModel,
 			'dataProvider' => $searchModel->search($params)
 		]);
