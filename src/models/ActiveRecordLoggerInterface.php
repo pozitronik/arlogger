@@ -3,6 +3,8 @@ declare(strict_types = 1);
 
 namespace pozitronik\arlogger\models;
 
+use yii\web\View;
+
 /**
  * Interface ActiveRecordLoggerInterface
  *
@@ -15,6 +17,8 @@ namespace pozitronik\arlogger\models;
  *
  * @property int $eventType
  * @property HistoryEvent $event
+ *
+ * @property string $timelineView Timeline view
  */
 interface ActiveRecordLoggerInterface {
 

@@ -29,16 +29,20 @@ use yii\db\ActiveRecord;
  * @property-read HistoryEventInterface $event
  * @property-read HistoryEventAction[] $eventActions
  *
+ * @property string $timelineView Timeline view
+ *
  * @property object|ReflectionClass|null $loadedModel Прогруженная (если есть возможность) модель указанного в логе класса
  */
 class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInterface {
 	use ARExtended;
 
+	private $_timelineView = 'timeline';
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public static function tableName():string {
-		return 'sys_log';
+		return 'sys_log';//todo: get from config
 	}
 
 	/**
@@ -321,6 +325,20 @@ class ActiveRecordLogger extends ActiveRecord implements ActiveRecordLoggerInter
 	 */
 	public static function ExpandClassName(string $shortClassName):string {
 		return ArrayHelper::getValue(Yii::$app->modules, "history.params.classNamesMap.$shortClassName", $shortClassName);
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTimelineView():string {
+		return $this->_timelineView;
+	}
+
+	/**
+	 * @param string $timeline
+	 */
+	public function setTimelineView(string $timelineView):void {
+		$this->_timelineView = $timelineView;
 	}
 
 }

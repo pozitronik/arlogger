@@ -46,7 +46,7 @@ class DefaultController extends Controller {
 			'model' => $for
 		]);
 
-		return $this->render('timeline', [
+		return $this->render($logger->timelineView, [
 			'timeline' => $logger->getHistory($id)
 		]);
 	}
