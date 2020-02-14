@@ -31,7 +31,6 @@ class DefaultController extends Controller {
 		]);
 	}
 
-
 	/**
 	 * @param string $for
 	 * @param int $id
